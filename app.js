@@ -109,25 +109,24 @@ function init() {
     // Hint: Inside a loop, you will need to use d3 to append a new
     // option for each sample name.
     sampleNames.forEach((sample) => {
-      dropdown.append("option") // Append an option element for each sample
-              .text(sample)     // Set the text of the option to the sample name
-              .property("value", sample); // Set the value of the option
+      dropdown.append("option") 
+              .text(sample)     
+              .property("value", sample);
     });
 
     // Get the first sample from the list
     const firstSample = sampleNames[0];
 
     // Build charts and metadata panel with the first sample
-    builsCharts(firstSample);
+    buildCharts(firstSample);
     buildMetadata(firstSample);
   });
 }
 
 // Function for event listener
 function optionChanged(newSample) {
-  // Build charts and metadata panel each time a new sample is selected
-buildCharts(newSample);
-buildMetadata(newSample);
+  buildCharts(newSample);
+  buildMetadata(newSample);
 }
 
 // Initialize the dashboard
